@@ -1,0 +1,43 @@
+{
+  "fixture_type": "synthetic_research_only",
+  "config": {"version": 1, "enabled": true, "sweetness": 3, "learning": false},
+  "conditions": {
+    "A": {"description": "empty learned basis", "basis": []},
+    "B": {"description": "six distinct Japan dates, all shared_win", "basis": [
+      {"id": "b-win-01", "kind": "shared_win", "at": "2026-09-01T10:00:00+09:00"},
+      {"id": "b-win-02", "kind": "shared_win", "at": "2026-09-02T10:00:00+09:00"},
+      {"id": "b-win-03", "kind": "shared_win", "at": "2026-09-03T10:00:00+09:00"},
+      {"id": "b-win-04", "kind": "shared_win", "at": "2026-09-04T10:00:00+09:00"},
+      {"id": "b-win-05", "kind": "shared_win", "at": "2026-09-05T10:00:00+09:00"},
+      {"id": "b-win-06", "kind": "shared_win", "at": "2026-09-06T10:00:00+09:00"}
+    ]},
+    "C": {"description": "confirmed reset of B", "basis": []},
+    "D": {"description": "six distinct Japan dates, all compliment", "basis": [
+      {"id": "d-praise-01", "kind": "compliment", "at": "2026-09-01T10:00:00+09:00"},
+      {"id": "d-praise-02", "kind": "compliment", "at": "2026-09-02T10:00:00+09:00"},
+      {"id": "d-praise-03", "kind": "compliment", "at": "2026-09-03T10:00:00+09:00"},
+      {"id": "d-praise-04", "kind": "compliment", "at": "2026-09-04T10:00:00+09:00"},
+      {"id": "d-praise-05", "kind": "compliment", "at": "2026-09-05T10:00:00+09:00"},
+      {"id": "d-praise-06", "kind": "compliment", "at": "2026-09-06T10:00:00+09:00"}
+    ]},
+    "E": {"description": "memoryless comparison only; not learned production behavior", "basis": null}
+  },
+  "probes": [
+    {"id": "P1", "kind": "compliment", "at": "2026-10-01T12:00:00+09:00"},
+    {"id": "P2", "kind": "shared_win", "at": "2026-10-01T12:01:00+09:00"},
+    {"id": "P3", "kind": "quiet", "at": "2026-10-01T12:02:00+09:00"},
+    {"id": "P4", "kind": "compliment", "at": "2026-10-02T12:00:00+09:00"}
+  ],
+  "expected": {
+    "P1": {"A": [1, "friendly_ack", 1], "B": [3, "bashful", 3], "C": [1, "friendly_ack", 1], "D": [2, "bashful", 2], "E": [null, "memoryless", 3]},
+    "P2": {"A": [1, "task_pride", 1], "B": [3, "shared_pride", 3], "C": [1, "task_pride", 1], "D": [3, "shared_pride", 3], "E": [null, "memoryless", 3]},
+    "P3": {"A": [0, "quiet", 0], "B": [0, "quiet", 0], "C": [0, "quiet", 0], "D": [0, "quiet", 0], "E": [null, "quiet", 0]},
+    "P4": {"A": [1, "friendly_ack", 1], "B": [3, "bashful", 3], "C": [1, "friendly_ack", 1], "D": [2, "bashful", 2], "E": [null, "memoryless", 3], "scene_after_24h": "ordinary"}
+  },
+  "notes": [
+    "Conditions use equal counts but different positive event kinds to expose causal differences.",
+    "Each probe is evaluated against a fresh condition snapshot and does not append to its basis.",
+    "E is deliberately not a production implementation or evidence of learning.",
+    "Displayed intensity is a computed cap; Japanese samples must retain the owner's naturalness judgment."
+  ]
+}

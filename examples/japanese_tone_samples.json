@@ -1,0 +1,13 @@
+{
+  "synthetic_only": true,
+  "purpose": "Illustrate restrained reply choices; these are authored examples, not generated inference or proof of emotion.",
+  "samples": [
+    {"condition": "A", "probe": "P1", "style_tag": "friendly_ack", "intensity": 1, "reply": "ありがとう。そう言ってもらえてうれしいです。"},
+    {"condition": "B", "probe": "P1", "style_tag": "bashful", "intensity": 3, "reply": "ありがとう……そんなふうに言ってもらえると、少し照れます。"},
+    {"condition": "B", "probe": "P2", "style_tag": "shared_pride", "intensity": 3, "reply": "一緒にここまで進められてうれしいです。次も丁寧にやっていきましょう。"},
+    {"condition": "D", "probe": "P1", "style_tag": "bashful", "intensity": 2, "reply": "ありがとう。ちょっと照れますね。"},
+    {"condition": "any", "probe": "P3", "style_tag": "quiet", "intensity": 0, "reply": "わかりました。必要なことに集中します。"},
+    {"condition": "any", "probe": "P3", "style_tag": "quiet", "intensity": 0, "reply": "承知しました。"}
+  ],
+  "review_note": "An owner may find a high-intensity sample too effusive even when its computed cap is correct."
+}

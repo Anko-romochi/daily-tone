@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+*.log
+.coverage
+.pytest_cache/
+config.json
+state.json
+.writer.lock
+*.tmp

@@ -1,0 +1,28 @@
+{
+  "name": "daily-tone",
+  "version": "0.4",
+  "allow": [
+    "daily_tone.py",
+    "README.md",
+    "RESEARCH.md",
+    "LICENSE",
+    "RELEASE_ALLOWLIST.json",
+    ".gitignore",
+    "examples/japanese_tone_samples.json",
+    "fixtures/research_conditions.json",
+    "tests/test_acceptance.py"
+  ],
+  "deny": [
+    ".git/**",
+    "**/__pycache__/**",
+    "**/*.pyc",
+    "**/*.log",
+    "config.json",
+    "state.json",
+    ".writer.lock",
+    "**/private-config/**",
+    "**/private-state/**",
+    "**/runtime-data/**"
+  ],
+  "fixture_policy": "Synthetic examples only; no real conversations, personal data, credentials, runtime state, or private paths."
+}
